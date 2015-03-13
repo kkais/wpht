@@ -1,0 +1,40 @@
+/**
+ * Handsome Testimonials Admin CSS
+ *
+ * @package     handsometestimonials
+ * @copyright   Copyright (c) 2014, Kevin Marshall
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since       1.0
+*/
+
+/* Testimonial Shortcode Generator Popup */
+#TB_ajaxContent {
+    width: 95% !important;
+    height: 90% !important;
+}
+
+.hndtst-dialog_Col_1 {
+	display: inline-block;
+	vertical-align: top;
+	width: 230px;
+}
+
+.hndtst-dialog_Col_2 {
+	position: fixed;
+	display: inline-block;
+	vertical-align: top;
+	width: 500px;
+	margin-top: 10px;
+}
+
+#TB_window {
+	min-width: 783px;
+}
+
+/* Design 2 Preview Alterations */
+.tst_preview_img {
+}
+.tst_preview_txt {
+	margin-top: -20px !important;
+
+}
