@@ -29,8 +29,17 @@
 
 	    	$tst_class_wraper = 'hndtst rotating-item';
 
+		//Enqueue Script for rotation
+  		wp_register_script( 'hndtst_tst_rotation', TSTMT_PLUGIN_URL . 'includes/js/infinite-rotator.js', array(), false, true );
+		wp_enqueue_script( 'hndtst_tst_rotation', TSTMT_PLUGIN_URL . 'includes/js/infinite-rotator.js', array(), false, true );
+
+	 	//Enque Specified Template CSS Style
+		wp_register_style( 'handsometestimonials_style', TSTMT_PLUGIN_URL . 'includes/css/template.css' );
+		wp_enqueue_style( 'handsometestimonials_style');
+
+
 	   		//Assign a numerical id to the number of times the shortcode is called on the page
-	    	static $i=1;
+	    		static $i=1;
  			$iteration = $i;
  			$i++;
 
@@ -81,8 +90,7 @@
 
 			// The Loop
 			if ( $tst_query->have_posts() ) {
-				//echo '<ul>';
-				echo '<div id="rotating-item-wrapper">';
+
 				while ( $tst_query->have_posts() ) {
 					$tst_query->the_post();
 					//var_dump($tst_query->post->ID);
@@ -95,12 +103,9 @@
 					//Set Variables after values returned from function 'shortcode_options'
 					$tst_css = $returned_css['tst_css'];
 
-				 	//Enque Specified Template CSS Style
-					wp_register_style( 'handsometestimonials_style', TSTMT_PLUGIN_URL . 'includes/css/template.css' );
-					wp_enqueue_style( 'handsometestimonials_style');
 
 					 //Overwrite styles based upon above options
-		        	wp_add_inline_style( 'handsometestimonials_style', $tst_css );
+		        		wp_add_inline_style( 'handsometestimonials_style', $tst_css );
 
 			//if subtitle_link exists, display subtitle hyperlinked
 		    $tst_subtitle = get_post_meta( $tstid, '_subtitle_meta_value_key', true );
@@ -211,16 +216,14 @@
 			}
 
 
-					//'<li>' . get_the_title() . '</li>';
 				}
-				echo '</div>';
-				//echo '</ul>';
+
 			}
 
 			 
 		    
 				           
-			echo $tst;
+			echo '<div id="rotating-item-wrapper">'.$tst.'</div>';
 		 
 		 	//Return output and end output buffer
 			return ob_get_clean();
