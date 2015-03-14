@@ -163,6 +163,12 @@ jQuery(document).ready(function($) { //Begin jQuery(document)
     $("#advancedsettings").toggle();
   });
 
+  // Multiple Testimonials Rotation on Change under Advanced Settings 
+  $("#tst_interval").hide();
+  $("#tst_all").change(function(){
+    $("#tst_interval").toggle();
+  });
+
 
   //Testimonial Search Box for Shortcode UI
   $('.hndtst-tst-search').keyup(function(){
