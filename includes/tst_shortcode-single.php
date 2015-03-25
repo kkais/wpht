@@ -50,52 +50,52 @@ class handsometestimonials_shortcode {
         $template = $tst_shortcode['template'];
         $img_loc = $tst_shortcode['img_loc'];
 
-        // Added by Khurram
-        //Set Variables for testimonials rotation query call
-        $tst_all = $tst_shortcode['tst_all']; // Check for multiple testimonials display for rotations
-        $tst_interval = $tst_shortcode['tst_interval']; // Get the value of rotation interval among testimonials
-        $tst_interval *= 1000; // Convert the interval value to meet javascript function milliseconds requirements.
+        
+        //Set Variables for testimonials rotation query call - KKAIS
+        $tst_all = $tst_shortcode['tst_all']; // Check for multiple testimonials display for rotations - KKAIS
+        $tst_interval = $tst_shortcode['tst_interval']; // Get the value of rotation interval among testimonials - KKAIS
+        $tst_interval *= 1000; // Convert the interval value to meet javascript function milliseconds requirements. - KKAIS
 
         //********* Display Testionial ***********//
         //Start output buffer
         ob_start();
 
-        //Define Variables for Testimonial Elements
+        //Define Variables for Testimonial Elements - KKAIS
         $tst = '';
 
-        // Added by Khurram
-        //Loop to obtain testimonials
+
+        //Loop to obtain testimonials - KKAIS
         $tst_args = array(
             'post_type' => 'testimonial',
         );
 
-        // Check if single testimonial is needed
-        //Query to obtain specific testimonial based on ID
-        if ($tst_all !== "true") {
+        // Check if single testimonial is needed - KKAIS
+        //Query to obtain specific testimonial based on ID - KKAIS
+        if (strtolower($tst_all) !== "yes") {
 
-            // Set the specific testimonial id 
+            // Set the specific testimonial id - KKAIS
             $tst_args['p'] = $tstid;
 
-            // Remove the rotation-item class when there's only one testimonial to display
+            // Remove the rotation-item class when there's only one testimonial to display - KKAIS
             $tst_class_wraper = trim(str_replace('rotating-item', '', $tst_class_wraper));
         }
 
         //Start Loop to display testimonial(s)
         $tst_query = new WP_Query($tst_args);
 
-        // If pulling all the testimonials (Rotation)
-        if ($tst_all === 'true' ) {
+        // If pulling all the testimonials (Rotation) - KKAIS
+        if ($tst_all === 'yes' ) {
 
-            // If there are posts then
+            // If there are posts then - KKAIS
             if ($tst_query->have_posts()) {
 
-                // Loop through the posts
+                // Loop through the posts - KKAIS
                 while ($tst_query->have_posts()) {
 
-                    // Pull the post out for the current iteration
+                    // Pull the post out for the current iteration - KKAIS
                     $tst_query->the_post();
 
-                    // Update the variables with the current post values
+                    // Update the variables with the current post values - KKAIS
                     $tstid = $tst_query->post->ID;
                     $tstiditr = $tstid . '-' . $iteration;
 
@@ -214,18 +214,18 @@ class handsometestimonials_shortcode {
 
                             $tst .= '</div>'; //End div class='handsometestimonials'
                     }
-                } // End posts While loop
+                } // End posts While loop - KKAIS
 
-                // Added By Khurram
-                // Added the rotating-item-wrapper
+                
+                // Added the rotating-item-wrapper - KKAIS
                 $tst = '<div id="rotating-item-wrapper">' . $tst . '</div>';
 
-                // Passing the rotating-item interval to javascript script
+                // Passing the rotating-item interval to javascript script - KKAIS
                 $tst .= '<script type="text/javascript">var interval=' . $tst_interval . ';</script>';
 
             }
 
-        } else {
+        } else { // otherwise - KKAIS
 
             //Call function to display single testimonial 
             $returned_css = hndtst_shortcode_single_css($tst_shortcode, $tstiditr);
@@ -358,7 +358,7 @@ class handsometestimonials_shortcode {
      * @param string $text
      * @param integer $length
      * @return string
-     * @author Khurram K
+     * @author KKAIS
      */
     function shorten_text_words($text, $length) {
 

@@ -19,11 +19,11 @@ function insertHndtst_Code(){
     var title_size = jQuery('#tst-title_size').val();     
     var tst_color = jQuery('#tst_color').val();     
     var tst_size = jQuery('#tst_size').val();
-    var tst_all = 0; // Added by Khurram default and if not checked then single testimonial
-    var tst_interval; // Added by Khurram
+    var tst_all = 'no'; // Default value for all testimonials and if not checked then single testimonial - KKAIS
+    var tst_interval; // Testimonials rotation interval - KKAIS
     if(jQuery("#tst_all").is(':checked')) { 
-      tst_all = 1; // Added by Khurram if checked then all testimonials
-      tst_interval = jQuery('#tst_interval').val(); // Added by Khurram
+      tst_all = 'yes'; // if checked then all testimonials - KKAIS
+      tst_interval = jQuery('#tst_interval').val(); // Get the interval value from Advanced Settings - KKAIS
     }  
     var subtitle_size = jQuery('#tst-subtitle_size').val();     
     var subtitle_color = jQuery('#tst-subtitle_color').val();         
@@ -84,10 +84,10 @@ function insertHndtst_Code(){
         output += 'tst_size="' + tst_size + '" ';
 
       if(tst_all) {
-        output += 'tst_all="true" '; // Added by Khurram
+        output += 'tst_all="yes" '; // Add yes for all testimonials to output string if checked - KKAIS
 
         if(tst_interval)
-          output += 'tst_interval="' + tst_interval + '" '; // Added by Khurram
+          output += 'tst_interval="' + tst_interval + '" '; // Add testimonials interval value to output string if exists - KKAIS
       }
 
       if(subtitle_size)
