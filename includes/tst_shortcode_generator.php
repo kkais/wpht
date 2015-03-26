@@ -220,10 +220,10 @@ function hndtst_popup_content() {
             <!-- // Field added for show all testimonials - KKAIS    -->            
             <br />
             <div>
-              <label for="tst_interval">Testimonial Rotation Interval</label><br />
+              <label for="tst_interval">Testimonial Transition Interval</label><br />
                 <input type="text" name="tst_interval" value="" id="tst_interval" placeholder="sec" />
             </div>
-            <!-- // Field added for testimonials rotation interval - KKAIS -->
+            <!-- // Field added for testimonials Transition interval - KKAIS -->
           </span>
           <div style="padding:15px 15px 0 0;">
             <input type="button" class="button-primary" value="Generate ShortCode" onclick="window.send_to_editor(insertHndtst_Code());">

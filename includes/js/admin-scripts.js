@@ -84,10 +84,10 @@ function insertHndtst_Code(){
         output += 'tst_size="' + tst_size + '" ';
 
       if(tst_all) {
-        output += 'tst_all="yes" '; // Add yes for all testimonials to output string if checked - KKAIS
+        output += 'show_all="yes" '; // Add yes for all testimonials to output string if checked - KKAIS
 
         if(tst_interval)
-          output += 'tst_interval="' + tst_interval + '" '; // Add testimonials interval value to output string if exists - KKAIS
+          output += 'transition_interval="' + tst_interval + '" '; // Add testimonials interval value to output string if exists - KKAIS
       }
 
       if(subtitle_size)

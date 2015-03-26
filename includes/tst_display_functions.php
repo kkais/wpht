@@ -31,8 +31,8 @@ function hndtst_shorcode_parser ( $atts ) {
 				'title_size' => '1.2em',
 				'tst_color' => '',
 				'tst_size' => '',
-				'tst_all' => 'no', // Default value for all testimonials and if not checked then single testimonial - KKAIS
-				'tst_interval' => '5',  // Default testimonials rotation interval 5 seconds - KKAIS
+				'show_all' => 'no', // Default value for all testimonials and if not checked then single testimonial - KKAIS
+				'transition_interval' => '5',  // Default testimonials rotation interval 5 seconds - KKAIS
 				'txt_align' => '',
 				'subtitle_color' => '',
 				'subtitle_size' => '0.8em',
@@ -100,8 +100,8 @@ function hndtst_shortcode_single_css( $tst_shortcode, $tstiditr ) {
     $subtitle_italic = $tst_shortcode['subtitle_italic'];
     $tstcolor = $tst_shortcode['tst_color'];
     $tst_size = $tst_shortcode['tst_size'];
-    $tst_all = $tst_shortcode['tst_all']; // Get the value for all testimonials checkbox - KKAIS   
-    $tst_interval = $tst_shortcode['tst_interval']; // Get the value for testimonials rotation interval text box - KKAIS   
+    $tst_all = $tst_shortcode['show_all']; // Get the value for all testimonials checkbox - KKAIS   
+    $tst_interval = $tst_shortcode['transition_interval']; // Get the value for testimonials rotation interval text box - KKAIS   
     $template = $tst_shortcode['template'];
     $tst_template2_after = '';
 	$tst_template2_before = '';

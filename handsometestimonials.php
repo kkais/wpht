@@ -2,7 +2,7 @@
 /* Plugin Name: Handsome Testimonials
 Plugin URI: http://handsomeapps.io
 Description: Create Testimonials with Style
-Version: 1.1.4
+Version: 1.1.5
 Author: Handsome Apps
 License: GPLv2 or later
 Text Domain: hndtst_loc

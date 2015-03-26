@@ -52,8 +52,8 @@ class handsometestimonials_shortcode {
 
         
         //Set Variables for testimonials rotation query call - KKAIS
-        $tst_all = $tst_shortcode['tst_all']; // Check for multiple testimonials display for rotations - KKAIS
-        $tst_interval = $tst_shortcode['tst_interval']; // Get the value of rotation interval among testimonials - KKAIS
+        $tst_all = $tst_shortcode['show_all']; // Check for multiple testimonials display for rotations - KKAIS
+        $tst_interval = $tst_shortcode['transition_interval']; // Get the value of rotation interval among testimonials - KKAIS
         $tst_interval *= 1000; // Convert the interval value to meet javascript function milliseconds requirements. - KKAIS
 
         //********* Display Testionial ***********//
