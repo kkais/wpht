@@ -163,7 +163,7 @@ jQuery(document).ready(function($) { //Begin jQuery(document)
     $("#advancedsettings").toggle();
   });
 
-  // Multiple Testimonials Rotation on Change under Advanced Settings 
+  // Multiple Testimonials Rotation on Change under Advanced Settings - KKAIS
   $("#tst_interval").hide();
   $("#tst_all").change(function(){
     $("#tst_interval").toggle();

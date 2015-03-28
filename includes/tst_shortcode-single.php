@@ -24,11 +24,18 @@ class handsometestimonials_shortcode {
 
     function dsply_testimonial($atts) {
 
-        // Added by Khuram
-        $tst_class_wraper = 'hndtst rotating-item'; // Set the variable with default css class names;
-        $length = 140; // Shorten string/text length
+        $tst_class_wraper = 'hndtst rotating-item'; // Set the variable with default css class names - KKAIS
+        $length = 140; // Shorten string/text length - KKAIS
 
-        //Enqueue Script for rotation
+        //Enqueue Script for actual dimentions - KKAIS
+        wp_register_script('hndtst_tst_actual', TSTMT_PLUGIN_URL . 'includes/js/jquery.actual.min.js', array(), false, true);
+        wp_enqueue_script('hndtst_tst_actual', TSTMT_PLUGIN_URL . 'includes/js/jquery.actual.min.js', array(), false, true);
+
+        //Enqueue Script for front - KKAIS
+        wp_register_script('hndtst_tst_front', TSTMT_PLUGIN_URL . 'includes/js/front-scripts.js', array(), false, true);
+        wp_enqueue_script('hndtst_tst_front', TSTMT_PLUGIN_URL . 'includes/js/front-scripts.js', array(), false, true);
+
+        //Enqueue Script for rotation - KKAIS
         wp_register_script('hndtst_tst_rotation', TSTMT_PLUGIN_URL . 'includes/js/infinite-rotator.js', array(), false, true);
         wp_enqueue_script('hndtst_tst_rotation', TSTMT_PLUGIN_URL . 'includes/js/infinite-rotator.js', array(), false, true);
 

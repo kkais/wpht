@@ -21,7 +21,7 @@
 /* Testimonial Rotation-item-wrapper Style - KKAIS */
 #rotating-item-wrapper {
 	position: relative;
-    min-height: 18em;
+    /*min-height: 18em;*/
 }
 /* Testimonials Rotation-item Style - KKAIS */
 .rotating-item {
